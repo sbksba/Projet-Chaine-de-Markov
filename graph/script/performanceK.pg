@@ -1,0 +1,19 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "PerformanceK.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Performance du systeme en fonction de K"
+set xlabel "K"
+set ylabel "Temps (ns)"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [0:14000]
+set yr [1058:220000]
+plot    "./data/perfo_K.dat" using 2:1 title 'K' with linespoints

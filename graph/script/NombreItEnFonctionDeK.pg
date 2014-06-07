@@ -1,0 +1,20 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "NombreItEnFonctionDeK.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Nombre d'iterations en fonction de K des methodes des puissances et de gauss-seidel"
+set xlabel "K"
+set ylabel "Nombre iterations"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [6:100]
+set yr [20:12000]
+plot    "./data/NombreItEnFonctionDeK.dat" using 1:2 title 'Methode des puissances' with linespoints, \
+	"./data/NombreItEnFonctionDeK.dat" using 1:3 title 'Methode de Gauss-Seidel' with linespoints

@@ -1,0 +1,19 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "PerformancePuissanceExacte.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Comparaison de la methode des puissances en fonction du nombre d'iterations"
+set xlabel "Nombre d'iterations"
+set ylabel "Ecart"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [1:500]
+set yr [0:0.01]
+plot    "./data/perfo_PE.dat" using 1:2 title 'Ecart de precision' with linespoints

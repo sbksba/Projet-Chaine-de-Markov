@@ -1,0 +1,20 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "Puissance_Gauss.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Temps de convergence des methodes des puissances et de gauss-seidel"
+set xlabel "Nombre Iteration"
+set ylabel "Temps (s)"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [0:60]
+set yr [0.00:0.800]
+plot    "./data/puissance.dat" using 2:1 title 'Methode des puissances' with linespoints, \
+	"./data/gauss_seidel.dat" using 2:1 title 'Methode de Gauss-Seidel' with linespoints

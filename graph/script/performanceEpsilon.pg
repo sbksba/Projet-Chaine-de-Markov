@@ -1,0 +1,19 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "PerformanceEpsilon.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Temps en fonction d'epsilon"
+set xlabel "Epsilon"
+set ylabel "Temps (ns)"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [0:-99]
+set yr [0:300000]
+plot    "./data/perfo_Epsilon.dat" using 1:2 title 'Epsilon' with linespoints

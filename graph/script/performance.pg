@@ -1,0 +1,20 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set terminal png
+set output "Performance.png"
+set boxwidth 0.75 absolute
+
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Performance des methodes des puissances et de gauss-seidel"
+set xlabel "Temps (s)"
+set ylabel "K"
+set label "Yield Point" at 0.003,260
+set arrow from 0.0028,250 to 0.003,280
+set grid
+set xr [0:0.3]
+set yr [0.00:700]
+plot    "./data/perfo_puissance.dat" using 1:2 title 'Methode des puissances' with linespoints, \
+	"./data/perfo_gauss_seidel.dat" using 1:2 title 'Methode de Gauss-Seidel' with linespoints
