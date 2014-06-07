@@ -1,5 +1,5 @@
-Projet : Projet Chaine de Markov
-================================
+Projet : Chaine de Markov
+=========================
 
 Participants
 ------------
